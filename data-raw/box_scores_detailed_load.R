@@ -2,6 +2,12 @@
 
 # Read data in
 
+box_scores_detailed_2014 <- readr::read_csv(
+  here::here("data-raw/detailed_box_scores_2014.csv"))
+
+box_scores_detailed_2015 <- readr::read_csv(
+  here::here("data-raw/detailed_box_scores_2015.csv"))
+
 box_scores_detailed_2016 <- readr::read_csv(
   here::here("data-raw/detailed_box_scores_2016.csv"),
   col_types = c("nncccccccccnc", rep("c", 27)))
