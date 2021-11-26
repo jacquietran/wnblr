@@ -18,6 +18,7 @@
 #'   \item{minutes}{Character. Total team minutes, in mm:ss.}
 #'   \item{field_goals_made}{Numeric. Number of successful field goals.}
 #'   \item{field_goals_attempted}{Numeric. Number of attempted field goals.}
+#'   \item{field_goals_percentage}{Numeric. `field_goals_made` divided by `field_goals_attempted` multiplied by 100.}
 #'   \item{three_pointers_made}{Numeric. Number of successful field goals.}
 #'   \item{three_pointers_attempted}{Numeric. Number of attempted field goals}
 #'   \item{three_pointers_percentage}{Numeric. `three_pointers_made` divided by `three_pointers_attempted` multiplied by 100.}
@@ -43,7 +44,7 @@
 #'   \item{points_second_chance}{Numeric. Number of second-chance points.}
 #'   \item{points_fast_break}{Numeric. Number of points from fast breaks.}
 #'   \item{bench_points}{Numeric. Number of points scored by bench players (i.e., non-starters).}
-#'   \item{points_in_the_paint}{Numeric. Number of points scored in the key area (colloquially, "in the paint".}
+#'   \item{points_in_the_paint}{Numeric. Number of points scored in the key area (colloquially, "in the paint").}
 #'   \item{time_leading}{Character. Time that the team listed in `team_name` spent in the lead during a game, expressed in mm:ss.}
 #'   \item{biggest_lead}{Numeric. Biggest lead achieved during a game by the team listed in `team_name`.}
 #'   \item{biggest_scoring_run}{Numeric. Biggest continuous run of scores achieved during a game by the team listed in `team_name`.}
