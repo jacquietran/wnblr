@@ -4,57 +4,57 @@
 #'
 #' @format A tibble with 1200 rows and 52 variables:
 #' \describe{
-#'   \item{season}{numeric, season of competition. Note that WNBL seasons typically overlap year-end; for simplicity, the first year of competition is included in the `season` variable, e.g., "2014" represents the 2014 / 2015 season}
-#'   \item{page_id}{numeric, unique identifier for each game. View the game stats in your browser by navigating to https://www.fibalivestats.com/u/wnbl/<page_id>/}
-#'   \item{team_name}{character, team name}
-#'   \item{team_short_name}{character, team nickname}
-#'   \item{home_away_flag}{character, identifying whether the team represented on each row was the home or away team.}
-#'   \item{team_name_opp}{character, opposition team name}
-#'   \item{team_short_name_opp}{character, opposition team nickname}
-#'   \item{points_total}{numeric, points scored by the team listed in `team_name`}
-#'   \item{points_total_opp}{numeric, points scored by the opposition team listed in `team_name_opp`}
-#'   \item{points_margin}{numeric, `points_total` minus `points_total_opp`}
-#'   \item{team_result}{character, win ("W"), loss ("L"), or draw ("D")}
-#'   \item{minutes}{}
-#'   \item{field_goals_made}{}
-#'   \item{field_goals_attempted}{}
-#'   \item{three_pointers_made}{}
-#'   \item{three_pointers_attempted}{}
-#'   \item{three_pointers_percentage}{}
-#'   \item{two_pointers_made}{}
-#'   \item{two_pointers_attempted}{}
-#'   \item{two_pointers_percentage}{}
-#'   \item{free_throws_made}{}
-#'   \item{free_throws_attempted}{}
-#'   \item{free_throws_percentage}{}
-#'   \item{rebounds_defensive}{}
-#'   \item{rebounds_offensive}{}
-#'   \item{rebounds_total}{}
-#'   \item{assists}{}
-#'   \item{turnovers}{}
-#'   \item{steals}{}
-#'   \item{blocks}{}
-#'   \item{blocks_received}{}
-#'   \item{fouls_personal}{}
-#'   \item{fouls_on}{}
-#'   \item{fouls_total}{}
-#'   \item{points}{}
-#'   \item{points_from_turnovers}{}
-#'   \item{points_second_chance}{}
-#'   \item{points_fast_break}{}
-#'   \item{bench_points}{}
-#'   \item{points_in_the_paint}{}
-#'   \item{time_leading}{}
-#'   \item{biggest_lead}{}
-#'   \item{biggest_scoring_run}{}
-#'   \item{lead_changes}{}
-#'   \item{times_scores_level}{}
-#'   \item{fouls_team}{}
-#'   \item{rebounds_team}{}
-#'   \item{rebounds_team_defensive}{}
-#'   \item{rebounds_team_offensive}{}
-#'   \item{turnovers_team}{}
-#'   \item{efficiency_team}{}
+#'   \item{season}{Numeric. Season of competition. Note that WNBL seasons typically overlap year-end. For simplicity, the first year of competition is included in the `season` variable, e.g., "2014" represents the 2014 / 2015 season.}
+#'   \item{page_id}{Numeric. Unique identifier for each game. View the game stats in your browser by navigating to https://www.fibalivestats.com/u/wnbl/<page_id>/}
+#'   \item{team_name}{Character. Team name.}
+#'   \item{team_short_name}{Character. Team nickname.}
+#'   \item{home_away_flag}{Character. Identifying whether the team represented on each row was the home or away team.}
+#'   \item{team_name_opp}{Character. Opposition team name.}
+#'   \item{team_short_name_opp}{Character. Opposition team nickname.}
+#'   \item{points_total}{Numeric. Points scored by the team listed in `team_name`.}
+#'   \item{points_total_opp}{Numeric. Points scored by the opposition team listed in `team_name_opp`}
+#'   \item{points_margin}{Numeric. `points_total` minus `points_total_opp`.}
+#'   \item{team_result}{Character. Identifying whether the team represented on each row won ("W") the game, lost ("L") the game, or drew ("D") with the team listed in `team_name_opp`.}
+#'   \item{minutes}{Character. Total team minutes, in mm:ss.}
+#'   \item{field_goals_made}{Numeric. Number of successful field goals.}
+#'   \item{field_goals_attempted}{Numeric. Number of attempted field goals.}
+#'   \item{three_pointers_made}{Numeric. Number of successful field goals.}
+#'   \item{three_pointers_attempted}{Numeric. Number of attempted field goals}
+#'   \item{three_pointers_percentage}{Numeric. `three_pointers_made` divided by `three_pointers_attempted` multiplied by 100.}
+#'   \item{two_pointers_made}{Numeric. Number of two-point field goals made.}
+#'   \item{two_pointers_attempted}{Numeric. Number of two-point field goals attempted.}
+#'   \item{two_pointers_percentage}{Numeric. `two_pointers_made` divided by `two_pointers_attempted` multiplied by 100.}
+#'   \item{free_throws_made}{Numeric. Number of free throws made.}
+#'   \item{free_throws_attempted}{Numeric. Number of free throws attempted.}
+#'   \item{free_throws_percentage}{Numeric. `free_throws_made` divided by `free_throws_attempted` multiplied by 100.}
+#'   \item{rebounds_defensive}{Numeric. Total number of defensive rebounds (individual + team).}
+#'   \item{rebounds_offensive}{Numeric. Total number of offensive rebounds (individual + team).}
+#'   \item{rebounds_total}{Numeric. Total number of rebounds, `rebounds_defensive` plus `rebounds_offensive`.}
+#'   \item{assists}{Numeric. Number of assists.}
+#'   \item{turnovers}{Numeric. Number of turnovers.}
+#'   \item{steals}{Numeric. Number of steals.}
+#'   \item{blocks}{Numeric. Number of blocks.}
+#'   \item{blocks_received}{Numeric. Number of blocks received.}
+#'   \item{fouls_personal}{Numeric. Number of personal fouls.}
+#'   \item{fouls_on}{Numeric. Number of fouls on.}
+#'   \item{fouls_total}{Numeric. Number of total fouls.}
+#'   \item{points}{Numeric. Number of points scored.}
+#'   \item{points_from_turnovers}{Numeric. Number of points scored from turnovers.}
+#'   \item{points_second_chance}{Numeric. Number of second-chance points.}
+#'   \item{points_fast_break}{Numeric. Number of points from fast breaks.}
+#'   \item{bench_points}{Numeric. Number of points scored by bench players (i.e., non-starters).}
+#'   \item{points_in_the_paint}{Numeric. Number of points scored in the key area (colloquially, "in the paint".}
+#'   \item{time_leading}{Character. Time that the team listed in `team_name` spent in the lead during a game, expressed in mm:ss.}
+#'   \item{biggest_lead}{Numeric. Biggest lead achieved during a game by the team listed in `team_name`.}
+#'   \item{biggest_scoring_run}{Numeric. Biggest continuous run of scores achieved during a game by the team listed in `team_name`.}
+#'   \item{lead_changes}{Numeric. Number of lead changes during a game.}
+#'   \item{times_scores_level}{Numeric. Number of times scores were level between competing teams.}
+#'   \item{fouls_team}{Numeric. Number of team fouls.}
+#'   \item{rebounds_team}{Numeric. Number of team rebounds, `rebounds_team_defensive` + `rebounds_team_offensive`.}
+#'   \item{rebounds_team_defensive}{Numeric. Number of team defensive rebounds.}
+#'   \item{rebounds_team_offensive}{Numeric. Number of team offensive rebounds.}
+#'   \item{turnovers_team}{Numeric. Number of team turnovers.}
+#'   \item{efficiency_team}{Numeric. Efficiency rating.}
 #' }
 #' @source Australian Women's National Basketball League website \url{https://www.wnbl.com.au}
 "box_scores"
