@@ -1,6 +1,6 @@
 # box_scores_load.R
 
-# Read data in
+# Read data in -----------------------------------------------------------------
 
 box_scores_2014 <- readr::read_csv(
   here::here("data-raw/team_box_scores_2014.csv"))
@@ -23,7 +23,7 @@ box_scores_2019 <- readr::read_csv(
 box_scores_2020 <- readr::read_csv(
   here::here("data-raw/team_box_scores_2020.csv"))
 
-# Tidying
+# Tidying ----------------------------------------------------------------------
 
 # Function for checking for whole numbers
 is.wholenumber <-
@@ -49,14 +49,16 @@ box_scores <- dplyr::bind_rows(
     time_leading, into = c("tl_min_whole", "tl_min_decimal"),
     sep = "\\.", remove = TRUE) |>
   dplyr::mutate(
-    tl_min_decimal = as.numeric(
-      glue::glue("0.{tl_min_decimal}")),
+    tl_min_decimal = dplyr::case_when(
+      !is.na(tl_min_decimal) ~ suppressWarnings(
+        as.numeric(glue::glue("0.{tl_min_decimal}"))),
+      TRUE                   ~ NA_real_),
     tl_sec = round(tl_min_decimal * 60, 0),
     tl_sec = stringr::str_pad(
       tl_sec, width = 2, side = "left", pad = "0"),
     time_leading = as.character(glue::glue("{tl_min_whole}:{tl_sec}"))) |>
   # Drop temporary variables
-  dplyr::select(-tl_min_whole, -tl_min_decimal, -tl_sec) |>
+  dplyr::select(-tl_min_whole, -tl_sec, -contains("tl_min_decimal")) |>
   # Set order of columns
   dplyr::select(
     season, page_id, team_name, team_short_name, home_away_flag,
@@ -70,5 +72,7 @@ box_scores <- dplyr::bind_rows(
     blocks_received, fouls_personal, fouls_on, fouls_total, points,
     points_from_turnovers, points_second_chance, points_fast_break,
     bench_points, points_in_the_paint, time_leading, everything())
+
+# Create package data ----------------------------------------------------------
 
 usethis::use_data(box_scores, overwrite = TRUE)
