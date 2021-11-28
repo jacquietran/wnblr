@@ -1,6 +1,7 @@
 # shots_load.R
 
-# Read data in
+# Read data in -----------------------------------------------------------------
+
 shots_2014 <- readr::read_csv(
   here::here("data-raw/shots_2014.csv"))
 
@@ -22,7 +23,7 @@ shots_2019 <- readr::read_csv(
 shots_2020 <- readr::read_csv(
   here::here("data-raw/shots_2020.csv"))
 
-# Tidying
+# Tidying ----------------------------------------------------------------------
 
 shots <- dplyr::bind_rows(
   shots_2020,
@@ -33,5 +34,7 @@ shots <- dplyr::bind_rows(
   shots_2015,
   shots_2014) |>
   dplyr::arrange(desc(season), page_id, action_number)
+
+# Create package data ----------------------------------------------------------
 
 usethis::use_data(shots, overwrite = TRUE)
