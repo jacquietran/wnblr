@@ -1,8 +1,8 @@
 #' Box score data from the Australian Women's National Basketball League (WNBL).
 #'
-#' Contains box scores data at the team-level (one row per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+#' `box_scores` contains box scores data at the team-level (one row per competing team), from games played in the Australian Women's National Basketball League. The `box_scores` data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 #'
-#' @format A tibble with 1200 rows and 52 variables:
+#' @format A tibble with 1200 rows and 50 variables:
 #' \describe{
 #'   \item{season}{Numeric. Season of competition. Note that WNBL seasons typically overlap year-end. For simplicity, the first year of competition is included in the `season` variable, e.g., "2014" represents the 2014 / 2015 season.}
 #'   \item{page_id}{Numeric. Unique identifier for each game. View the game stats in your browser by navigating to https://www.fibalivestats.com/u/wnbl/<page_id>/}
@@ -37,9 +37,9 @@
 #'   \item{blocks}{Numeric. Number of blocks.}
 #'   \item{blocks_received}{Numeric. Number of blocks received.}
 #'   \item{fouls_personal}{Numeric. Number of personal fouls.}
+#'   \item{fouls_team}{Numeric. Number of team fouls.}
 #'   \item{fouls_on}{Numeric. Number of fouls on.}
 #'   \item{fouls_total}{Numeric. Number of total fouls.}
-#'   \item{points}{Numeric. Number of points scored.}
 #'   \item{points_from_turnovers}{Numeric. Number of points scored from turnovers.}
 #'   \item{points_second_chance}{Numeric. Number of second-chance points.}
 #'   \item{points_fast_break}{Numeric. Number of points from fast breaks.}
@@ -50,12 +50,10 @@
 #'   \item{biggest_scoring_run}{Numeric. Biggest continuous run of scores achieved during a game by the team listed in `team_name`.}
 #'   \item{lead_changes}{Numeric. Number of lead changes during a game.}
 #'   \item{times_scores_level}{Numeric. Number of times scores were level between competing teams.}
-#'   \item{fouls_team}{Numeric. Number of team fouls.}
 #'   \item{rebounds_team}{Numeric. Number of team rebounds, `rebounds_team_defensive` + `rebounds_team_offensive`.}
 #'   \item{rebounds_team_defensive}{Numeric. Number of team defensive rebounds.}
 #'   \item{rebounds_team_offensive}{Numeric. Number of team offensive rebounds.}
 #'   \item{turnovers_team}{Numeric. Number of team turnovers.}
-#'   \item{efficiency_team}{Numeric. Efficiency rating.}
 #' }
 #' @source Australian Women's National Basketball League website \url{https://www.wnbl.com.au}
 "box_scores"

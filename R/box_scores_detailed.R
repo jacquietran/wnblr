@@ -1,8 +1,8 @@
-#' Detailed, player-level box score data from the Australian Women's National Basketball League (WNBL).
+#' Player-level box score data from the Australian Women's National Basketball League (WNBL).
 #'
-#' Contains box scores data at the player-level (one row per player per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+#' `box_scores_detailed` contains box scores data at the player-level (one row per player per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The `box_scores_detailed` data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 #'
-#' @format A tibble with 12973 rows and 41 variables:
+#' @format A tibble with 12973 rows and 40 variables:
 #' \describe{
 #'   \item{season}{Numeric. Season of competition. Note that WNBL seasons typically overlap year-end. For simplicity, the first year of competition is included in the `season` variable, e.g., "2014" represents the 2014 / 2015 season.}
 #'   \item{page_id}{Numeric. Unique identifier for each game. View the game stats in your browser by navigating to https://www.fibalivestats.com/u/wnbl/<page_id>/}
@@ -13,13 +13,11 @@
 #'   \item{team_short_name_opp}{Character. Opposition team nickname.}
 #'   \item{first_name}{Character. Player's first name.}
 #'   \item{family_name}{Character. Player's family name.}
-#'   \item{first_name_initial}{Character. Initial for the player's first name.}
-#'   \item{family_name_initial}{Character. Initial for the player's family name.}
 #'   \item{scoreboard_name}{Character. Player's name as it appears on a scoreboard (e.g., Sara Blicavs = S. Blicavs).}
 #'   \item{playing_position}{Character. Player's typical on-court position. G = Guard, F = Forward, C = Centre).}
 #'   \item{starter}{Numeric. Flagging variable to indicate whether the player started on-court for any given game or not. Started on-court: `starter == 1`, started on the bench: `starter == 0`.}
 #'   \item{minutes}{Character. Player's minutes played, in mm:ss.}
-#'   \item{points}{Numeric. Number of points scored.}
+#'   \item{points}{Numeric. Number of points scored by the player listed in `scoreboard_name`.}
 #'   \item{points_second_chance}{Numeric. Number of second-chance points.}
 #'   \item{points_fast_break}{Numeric. Number of points from fast breaks.}
 #'   \item{points_in_the_paint}{Numeric. Number of points scored in the key area (colloquially, "in the paint").}
@@ -46,7 +44,6 @@
 #'   \item{blocks_received}{Numeric. Number of blocks received.}
 #'   \item{fouls_personal}{Numeric. Number of personal fouls.}
 #'   \item{fouls_on}{Numeric. Number of fouls on.}
-#'   \item{plus_minus}{Numeric. Plus/minus player rating.}
 #' }
 #' @source Australian Women's National Basketball League website \url{https://www.wnbl.com.au}
 "box_scores_detailed"

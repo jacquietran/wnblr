@@ -40,6 +40,8 @@ box_scores_detailed <- dplyr::bind_rows(
   box_scores_detailed_2016,
   box_scores_detailed_2015,
   box_scores_detailed_2014) |>
+  # Exclude extraneous variables
+  dplyr::select(-plus_minus) |>
   dplyr::select(
     season, page_id, team_name, team_short_name, home_away_flag, team_name_opp,
     team_short_name_opp, first_name, family_name, scoreboard_name,

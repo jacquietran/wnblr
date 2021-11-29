@@ -23,6 +23,8 @@ A tibble with 81828 rows and 20 variables:
 \item{points_scored}{Numeric. Points scored from shot attempt (if any).}
 \item{x}{Double. In a top-down view of the basketball court, \code{x} corresponds to the estimated horizontal coordinate for each shot's location (e.g., as per an x axis on a cartesian plane).}
 \item{y}{Double. In a top-down view of the basketball court, \code{y} corresponds to estimated vertical coordinate for each shot's location (e.g., as per a y axis on a cartesian plane).}
+\item{first_name}{Character. Player's first name.}
+\item{family_name}{Character. Player's family name.}
 \item{scoreboard_name}{Character. Player's name as it appears on a scoreboard (e.g., Sara Blicavs = S. Blicavs).}
 \item{shirt_number}{Numeric. Player's shirt number.}
 }
@@ -34,6 +36,6 @@ Australian Women's National Basketball League website \url{https://www.wnbl.com.
 shots
 }
 \description{
-Contains shots data for field goals (one row per shot attempt), from games played in the Australian Women's National Basketball League. Includes details such as XY location, types of field goals (i.e., 3-pt, 2-pt) and sub-types (e.g., lay-ups, jump shots, dunks). The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+\code{shots} contains shots data for field goals (one row per shot attempt), from games played in the Australian Women's National Basketball League. Includes details such as XY location, types of field goals (i.e., 3-pt, 2-pt) and sub-types (e.g., lay-ups, jump shots, dunks). The \code{shots} data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 }
 \keyword{datasets}

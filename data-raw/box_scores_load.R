@@ -59,6 +59,8 @@ box_scores <- dplyr::bind_rows(
     time_leading = as.character(glue::glue("{tl_min_whole}:{tl_sec}"))) |>
   # Drop temporary variables
   dplyr::select(-tl_min_whole, -tl_sec, -contains("tl_min_decimal")) |>
+  # Exclude extraneous variables
+  dplyr::select(-c("points", "efficiency_custom")) |>
   # Set order of columns
   dplyr::select(
     season, page_id, team_name, team_short_name, home_away_flag,
@@ -69,7 +71,7 @@ box_scores <- dplyr::bind_rows(
     two_pointers_attempted, two_pointers_percentage, free_throws_made,
     free_throws_attempted, free_throws_percentage, rebounds_defensive,
     rebounds_offensive, rebounds_total, assists, turnovers, steals, blocks,
-    blocks_received, fouls_personal, fouls_on, fouls_total, points,
+    blocks_received, fouls_personal, fouls_team, fouls_on, fouls_total,
     points_from_turnovers, points_second_chance, points_fast_break,
     bench_points, points_in_the_paint, time_leading, everything())
 
