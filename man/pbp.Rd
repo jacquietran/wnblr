@@ -48,6 +48,6 @@ Australian Women's National Basketball League website \url{https://www.wnbl.com.
 pbp
 }
 \description{
-\code{pbp} contains play-by-play data (one row per game event), from games played in the Australian Women's National Basketball League. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+\code{pbp} contains play-by-play data (one row per game event), from games played in the Australian Women's National Basketball League. The \code{pbp} data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 }
 \keyword{datasets}

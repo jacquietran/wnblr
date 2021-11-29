@@ -56,6 +56,6 @@ Australian Women's National Basketball League website \url{https://www.wnbl.com.
 box_scores_detailed
 }
 \description{
-\code{box_scores_detailed} contains box scores data at the player-level (one row per player per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+\code{box_scores_detailed} contains box scores data at the player-level (one row per player per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The \code{box_scores_detailed} data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 }
 \keyword{datasets}

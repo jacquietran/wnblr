@@ -1,6 +1,6 @@
 #' Play-by-play data from the Australian Women's National Basketball League (WNBL).
 #'
-#' `pbp` contains play-by-play data (one row per game event), from games played in the Australian Women's National Basketball League. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+#' `pbp` contains play-by-play data (one row per game event), from games played in the Australian Women's National Basketball League. The `pbp` data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 #'
 #' @format A tibble with 321566 rows and 32 variables:
 #' \describe{
