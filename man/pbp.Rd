@@ -5,7 +5,7 @@
 \alias{pbp}
 \title{Play-by-play data from the Australian Women's National Basketball League (WNBL).}
 \format{
-A tibble with 321566 rows and 33 variables:
+A tibble with 321566 rows and 32 variables:
 \describe{
 \item{season}{Numeric. Season of competition. Note that WNBL seasons typically overlap year-end. For simplicity, the first year of competition is included in the \code{season} variable, e.g., "2014" represents the 2014 / 2015 season.}
 \item{page_id}{Numeric. Unique identifier for each game. View the game stats in your browser by navigating to https://www.fibalivestats.com/u/wnbl/<page_id>/}
@@ -18,24 +18,27 @@ A tibble with 321566 rows and 33 variables:
 \item{period_type}{Character. A string to identify whether the period is a REGULAR period or OVERTIME.}
 \item{period}{Numeric. Identifies the period number. Use in conjunction with \code{period_type}, e.g., \code{period_type == "REGULAR" & period == 1} corresponds to the 1st quarter in regular play; \code{period_type == "OVERTIME" & period == 1} corresponds to the 1st overtime period.}
 \item{game_time}{Character. Time on the game clock (within period) that corresponds to each play, expressed as mm:ss.}
-\item{team1_score}{Numeric. Cumulative score for the team listed in \code{team_name}.}
-\item{team2_score}{Numeric. Cumulative score for the team listed in \code{team_name_opp}.}
-\item{margin_team1_minus_team2}{}
-\item{success}{Numeric. Flagging variable to indicate whether a play was successful (0 = successful, 1 = not succesful).}
-\item{action_type}{Character. Type of game action (e.g., "jumpball", "rebound", "assist").}
-\item{qualifier}{Character. Additional information about the game action (e.g., "fromturnover", "2ndchance", "blocked").}
-\item{sub_type}{Character. Action sub-type (e.g., "heldball", "badpass", "travel").}
-\item{scoring}{Numeric. Flagging variable to indicate whether a game action was a scoring attempt (0 = not a scoring attempt, 1 = scoring attempt).}
-\item{shirt_number}{Numeric. Player's shirt number.}
+\item{home_team_score}{Numeric. Running score for the home team.}
+\item{away_team_score}{Numeric. Running score for the away team.}
+\item{margin_home_minus_team2}{Numeric. Running score margin, \code{home_team_score} minus \code{away_team_score}.}
 \item{first_name}{Character. Player's first name.}
 \item{family_name}{Character. Player's family name.}
-\item{first_name_initial}{Character. Initial for the player's first name.}
-\item{family_name_initial}{Character. Initial for the player's family name.}
 \item{scoreboard_name}{Character. Player's name as it appears on a scoreboard (e.g., Sara Blicavs = S. Blicavs).}
-\item{qualifier1}{Character. Additional information about the game action.}
-\item{qualifier2}{Character. Additional information about the game action.}
-\item{qualifier3}{Character. Additional information about the game action.}
-\item{qualifier4}{Character. Additional information about the game action.}
+\item{shirt_number}{Numeric. Player's shirt number.}
+\item{action_type}{Character. Type of game action (e.g., "jumpball", "rebound", "assist").}
+\item{sub_type}{Character. Action sub-type (e.g., "heldball", "badpass", "travel").}
+\item{is_success}{Numeric. Flagging variable to indicate whether a play was successful (0 = was not successful, 1 = was successful).}
+\item{is_shot_attempt}{Numeric. Flagging variable to indicate whether a game action was a shot attempt (0 = was not a shot attempt, 1 = was a shot attempt).}
+\item{is_team_stat}{Numeric. Flagging variable to indicate whether a play was recorded as a team statistic, e.g., team rebound, team foul (0 = was not a team statistic, 1 = was a team statistic).}
+\item{is_from_turnover}{Numeric. Flagging variable to indicate whether a play resulted from a turnover (0 = was not from a turnover, 1 = was from a turnover).}
+\item{is_points_in_the_paint}{Numeric. Flagging variable to indicate whether points scored in a given play were scored in the key area, colloquially referred to as "the paint" (0 = not in the paint, 1 = in the paint).}
+\item{is_second_chance}{Numeric. Flagging variable to indicate whether a given play is a second-chance play, as would result from an offensive rebound (0 = was not a second-chance play, 1 = was a second-chance play).}
+\item{is_fast_break}{Numeric. Flagging variable to indicate whether a given play occurred during a fast break (0 = was not during a fast break, 1 = was during a fast break).}
+\item{is_shooting_foul_1ft}{Numeric. Flagging variable to identify shooting fouls that resulted in a penalty of 1 free throw (0 = was not a shooting foul with 1-free-throw penalty, 1 = was a shooting foul with 1-free-throw penalty).}
+\item{is_shooting_foul_2ft}{Numeric. Flagging variable to identify shooting fouls that resulted in a penalty of 2 free throws (0 = was not a shooting foul with 2-free-throw penalty, 1 = was a shooting foul with 2-free-throw penalty).}
+\item{is_shooting_foul_3ft}{Numeric. Flagging variable to identify shooting fouls that resulted in a penalty of 3 free throws (0 = was not a shooting foul with 3-free-throw penalty, 1 = was a shooting foul with 3-free-throw penalty).}
+\item{is_blocked}{Numeric. Flagging variable to identify if a shot attempt play was blocked (0 = was not blocked, 1 = was blocked).}
+\item{is_double_foul}{Numeric. Flagging variable to identify if a foul play was called as part of a double foul, where players from opposing teams are awarded fouls from the same play (0 = was not part of a double foul call, 1 = was part of a double foul call).}
 }
 }
 \source{
@@ -45,6 +48,6 @@ Australian Women's National Basketball League website \url{https://www.wnbl.com.
 pbp
 }
 \description{
-Contains play-by-play data (one row per game event), from games played in the Australian Women's National Basketball League. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+\code{pbp} contains play-by-play data (one row per game event), from games played in the Australian Women's National Basketball League. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 }
 \keyword{datasets}
