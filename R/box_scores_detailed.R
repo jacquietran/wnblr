@@ -1,6 +1,6 @@
-#' Detailed, player-level box score data from the Australian Women's National Basketball League (WNBL).
+#' Player-level box score data from the Australian Women's National Basketball League (WNBL).
 #'
-#' Contains box scores data at the player-level (one row per player per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
+#' `box_scores_detailed` contains box scores data at the player-level (one row per player per competing team), from games played in the Australian Women's National Basketball League. Includes common basketball metrics such as points scored, rebounds, assists, steals, and so on. The data set currently contains publicly available data from games played in the 2014/2015 season to the 2020 season, inclusive.
 #'
 #' @format A tibble with 12973 rows and 41 variables:
 #' \describe{
