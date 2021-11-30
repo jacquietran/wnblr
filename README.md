@@ -102,25 +102,35 @@ font_add_google(name = "Source Sans Pro", family = "source")
 # Build plot
 showtext_auto()
 # After building the plot, run showtext_auto(FALSE) to close off
-ggplot(magbegor,
-       aes(x = season, y = value, group = key, fill = key)) +
+ggplot(
+  magbegor,
+  aes(x = season, y = value, group = key, fill = key)) +
   facet_wrap(~key, nrow = 1, scales = "free_y") +
-  geom_bar(stat = "identity") + 
+  geom_bar(stat = "identity") +
   scale_fill_manual(values = c("#FFC53D", "#688d3a", "#0E4735")) +
   labs(
     title = "Ezi Magbegor: WNBL shooting averages from 2017-2020",
     x = "Season", y = NULL,
     caption = "Data source: {wnblr} & WNBL.com.au | Plot: @jacquietran") +
   ggdark::dark_mode() +
-  theme(legend.position = "none",
-        text = element_text(
-          colour = "#FFFFFF", family = "source", size = 48),
-        plot.title = element_text(
-          family = "patua", margin=margin(0,0,15,0)),
-        plot.caption = element_text(margin=margin(15,0,0,0)))
+  theme(
+    legend.position = "none",
+    text = element_text(
+      colour = "#FFFFFF", family = "source", size = 48),
+    plot.title = element_text(
+      family = "patua", margin=margin(0,0,15,0)),
+    plot.caption = element_text(margin=margin(15,0,0,0)))
 ```
 
 <img src="man/figures/README-plot-1.png" width="100%" />
+
+## Known issues
+
+Game data is missing or wildly incomplete for some games in most of the
+seasons from 2014/2015 to 2020, as documented
+[here](https://github.com/jacquietran/wnblr/issues/23). If anyone has
+leads on where to find live stats from the games listed as “missing”,
+feel free to log an issue and let me know!
 
 ## Hex logos
 
