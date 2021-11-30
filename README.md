@@ -23,6 +23,8 @@ Australian [**Women’s National Basketball League
 -   `pbp`: Play-by-play data.
 -   `shots`: Shots data, primarily containing XY shot locations.
 
+:exclamation::exclamation:**Please note:**:exclamation::exclamation: The data currently contained in `wnblr` is largely provided "as scraped". This package is currently in alpha and needs data quality checks, so if you spot some strange numbers or want to help with checking for data bugs, feel free to log an issue - contributions welcome!
+
 ## Installation
 
 Install the development version of `wnblr` from GitHub with:
