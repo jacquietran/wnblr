@@ -42,13 +42,13 @@ remotes::install_github("jacquietran/wnblr")
 
 There's lots to work with - for example, here's a quick look at the `shots` data:
 
-```{r shots, dpi=320, message = FALSE}
+```{r summarise_shots, message = FALSE}
 
 # Load libraries
 library(wnblr)
 library(dplyr)
 
-# Summarise frequency of different shot types
+# Frequency of shot types attempted in the 2020 season
 shots %>%
   filter(season == 2020) %>%
   select(sub_type, shot_result) %>%
@@ -59,13 +59,69 @@ shots %>%
 
 ```
 
-```{r plot}
+It's a smooth run from data to plot, too:
+
+```{r plot, dpi=320, message = FALSE}
 
 # yellow = #FFC53D
 # green = #0E4735
 
+# Load libraries
+library(ggplot2)
+library(showtext)
+
+# Tidy data
+magbegor <- box_scores_detailed %>%
+  filter(scoreboard_name == "E. Magbegor") %>%
+  select(season, contains("field_goals")) %>%
+  group_by(season) %>%
+  summarise(
+    fgm = round(mean(field_goals_made), 1),
+    fga = round(mean(field_goals_attempted), 1),
+    fgpct = round(mean(field_goals_percentage), 1)) %>%
+  ungroup() %>%
+  tidyr::pivot_longer(
+    cols = c("fgm", "fga", "fgpct"),
+    names_to = "key",
+    values_to = "value") %>%
+  mutate(
+    key = case_when(
+      key == "fgm"   ~ "Field goals made",
+      key == "fga"   ~ "Field goals attempted",
+      key == "fgpct" ~ "Field goal %"),
+    key = factor(
+      key, levels = c("Field goals made",
+                      "Field goals attempted",
+                      "Field goal %")),)
+
+# Import Google Fonts
+font_add_google(name = "Patua One", family = "patua")
+font_add_google(name = "Source Sans Pro", family = "source")
+
+# Build plot
+showtext_auto()
+ggplot(magbegor,
+       aes(x = season, y = value, group = key, fill = key)) +
+  facet_wrap(~key, nrow = 1, scales = "free_y") +
+  geom_bar(stat = "identity") + 
+  labs(
+    title = "Ezi Magbegor: WNBL shooting averages from 2017-2020",
+    x = "Season", y = NULL,
+    caption = "Data source: {wnblr} & WNBL.com.au | Plot: @jacquietran") +
+  ggdark::dark_mode() +
+  theme(legend.position = "none",
+        text = element_text(
+          colour = "#FFFFFF", family = "source", size = 14),
+        plot.title = element_text(
+          family = "patua", margin=margin(0,0,15,0)),
+        plot.caption = element_text(margin=margin(15,0,0,0)))
+# showtext_auto(FALSE) to close off
+
 ```
 
+```{r, echo = FALSE}
+showtext_auto(FALSE)
+```
 
 ## Hex logos
 
