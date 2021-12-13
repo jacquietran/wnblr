@@ -14,3 +14,6 @@ LazyData: true
 LazyDataCompression: xz
 Imports: 
     tibble
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
