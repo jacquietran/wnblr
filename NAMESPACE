@@ -2,4 +2,5 @@
 
 export(load_box_scores)
 export(load_box_scores_detailed)
+export(load_pbp)
 importFrom(tibble,tibble)
