@@ -20,14 +20,15 @@ the Australian [**Women’s National Basketball League
     basketball box score metrics like points scored, field goals made /
     attempted, free throws made / attempted, rebounds, turnovers, and
     the like.
--   `box_scores_detailed`: Player-level box scores.
--   `pbp`: Play-by-play data.
--   `shots`: Shots data, primarily containing XY shot locations.
+-   `load_box_scores_detailed`(): Player-level box scores.
+-   `load_pbp()`: Play-by-play data.
+-   `load_shots()`: Shots data, primarily containing XY shot locations.
 
-❗❗ Please note: The data currently contained in wnblr is largely
+❗❗ Please note: The data currently contained in `wnblr` is largely
 provided “as scraped”. This package is currently in alpha and needs data
 quality checks, so if you spot some strange numbers or want to help with
-checking for data bugs, feel free to log an issue - contributions
+checking for data bugs, feel free to [log an
+issue](https://www.github.com/jacquietran/wnblr/issues) - contributions
 welcome! ❗❗
 
 ## Installation
@@ -48,6 +49,9 @@ There’s lots to work with - for example, here’s a quick look at the
 # Load libraries
 library(wnblr)
 library(dplyr)
+
+# Retrieve data using {wnblr}
+shots <- load_shots()
 
 # Frequency of shot types attempted in the 2020 season
 shots %>%
@@ -77,11 +81,17 @@ plot, too:
 
 ``` r
 # Load libraries
+library(wnblr)
+library(dplyr)
 library(ggplot2)
 library(showtext)
 
+# Retrieve data using {wnblr}
+box_scores_detailed <- load_box_scores_detailed()
+
 # Tidy data
 magbegor <- box_scores_detailed %>%
+  filter(season != 2021) %>% # Exclude season in progress
   filter(scoreboard_name == "E. Magbegor") %>%
   select(season, contains("field_goals")) %>%
   group_by(season) %>%
@@ -133,8 +143,8 @@ ggplot(
 
 ## Known issues
 
-Game data is missing or wildly incomplete for some games in most of the
-seasons from 2014/2015 to 2020, as documented
+Game data is missing for some games in most of the seasons from
+2014/2015 to 2020, as documented
 [here](https://github.com/jacquietran/wnblr/issues/23). If anyone has
 leads on where to find live stats from the games listed as “missing”,
 feel free to log an issue and let me know!
