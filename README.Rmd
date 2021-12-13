@@ -30,6 +30,8 @@ The `wnblr` package provides access to a range of game statistics from the Austr
 - `pbp`: Play-by-play data.
 - `shots`: Shots data, primarily containing XY shot locations.
 
+`r emo::ji("exclamation")``r emo::ji("exclamation")` Please note: The data currently contained in wnblr is largely provided "as scraped". This package is currently in alpha and needs data quality checks, so if you spot some strange numbers or want to help with checking for data bugs, feel free to log an issue - contributions welcome! `r emo::ji("exclamation")``r emo::ji("exclamation")` 
+
 ## Installation
 
 Install the development version of `wnblr` from GitHub with:
@@ -129,4 +131,4 @@ Game data is missing or wildly incomplete for some games in most of the seasons 
 
 ## Hex logos
 
-Courtesy of [**@PythonUnicornCoder**](https://github.com/PythonUnicornCoder) - thank you!!
+Courtesy of [**@PythonCoderUnicorn**](https://github.com/PythonCoderUnicorn) - thank you!!
