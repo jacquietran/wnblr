@@ -14,18 +14,18 @@ issues](https://img.shields.io/github/issues-raw/jacquietran/wnblr)](https://git
 
 The `wnblr` package provides access to a range of game statistics from
 the Australian [**Women’s National Basketball League
-(WNBL)**](https://www.wnbl.com.au):
+(WNBL)**](https://www.wnbl.com.au), with these functions:
 
 -   `load_box_scores()`: Team-level box scores, with all your usual
     basketball box score metrics like points scored, field goals made /
     attempted, free throws made / attempted, rebounds, turnovers, and
     the like.
--   `load_box_scores_detailed`(): Player-level box scores.
+-   `load_box_scores_detailed()`: Player-level box scores.
 -   `load_pbp()`: Play-by-play data.
 -   `load_shots()`: Shots data, primarily containing XY shot locations.
 
 ❗❗ Please note: The data currently contained in `wnblr` is largely
-provided “as scraped”. This package is currently in alpha and needs data
+provided “as scraped”. This package is currently in beta and needs data
 quality checks, so if you spot some strange numbers or want to help with
 checking for data bugs, feel free to [log an
 issue](https://www.github.com/jacquietran/wnblr/issues) - contributions
@@ -43,7 +43,7 @@ remotes::install_github("jacquietran/wnblr")
 ## Examples
 
 There’s lots to work with - for example, here’s a quick look at the
-`shots` data:
+shots data, accessed by using the function `load_shots()`:
 
 ``` r
 # Load libraries
