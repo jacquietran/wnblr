@@ -12,6 +12,10 @@ commit](https://img.shields.io/github/last-commit/jacquietran/wnblr)](https://gi
 issues](https://img.shields.io/github/issues-raw/jacquietran/wnblr)](https://github.com/jacquietran/wnblr/issues)
 <!-- badges: end -->
 
+> ~~Buyer~~ **Coder beware:** As of Dec 2021, this package is undergoing
+> major re-development. The next version will introduce many
+> improvements but also breaking changes.
+
 The `wnblr` package provides access to a range of game statistics from
 the Australian [**Women’s National Basketball League
 (WNBL)**](https://www.wnbl.com.au), with these functions:
