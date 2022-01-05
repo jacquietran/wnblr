@@ -23,6 +23,8 @@ knitr::opts_chunk$set(
 [![GitHub open issues](https://img.shields.io/github/issues-raw/jacquietran/wnblr)](https://github.com/jacquietran/wnblr/issues)
 <!-- badges: end -->
 
+> ~~Buyer~~ **Coder beware:** As of Dec 2021, this package is undergoing major re-development. The next version will introduce many improvements but also breaking changes.
+
 The `wnblr` package contains a range of game statistics from the Australian [**Women's National Basketball League (WNBL)**](https://www.wnbl.com.au):
 
 - `box_scores`: Team-level box scores, with all your usual basketball box score metrics like points scored, field goals made / attempted, free throws made / attempted, rebounds, turnovers, and the like.

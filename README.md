@@ -12,6 +12,10 @@ commit](https://img.shields.io/github/last-commit/jacquietran/wnblr)](https://gi
 issues](https://img.shields.io/github/issues-raw/jacquietran/wnblr)](https://github.com/jacquietran/wnblr/issues)
 <!-- badges: end -->
 
+> ~~Buyer~~ **Coder beware:** As of Dec 2021, this package is undergoing
+> major re-development. The next version will introduce many
+> improvements but also breaking changes.
+
 The `wnblr` package contains a range of game statistics from the
 Australian [**Women’s National Basketball League
 (WNBL)**](https://www.wnbl.com.au):
@@ -22,8 +26,6 @@ Australian [**Women’s National Basketball League
 -   `box_scores_detailed`: Player-level box scores.
 -   `pbp`: Play-by-play data.
 -   `shots`: Shots data, primarily containing XY shot locations.
-
-:exclamation::exclamation:**Please note:**:exclamation::exclamation: The data currently contained in `wnblr` is largely provided "as scraped". This package is currently in alpha and needs data quality checks, so if you spot some strange numbers or want to help with checking for data bugs, feel free to log an issue - contributions welcome!
 
 ## Installation
 
